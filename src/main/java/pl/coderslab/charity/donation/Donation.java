@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -35,7 +36,7 @@ public class Donation {
   @Digits(message = "Należy podać liczbę całkowitą.", integer = 100, fraction = 1)
   private Integer quantity;
 
-  @OneToMany
+  @ManyToMany
   private List<Category> categories;
 
   @ManyToOne
